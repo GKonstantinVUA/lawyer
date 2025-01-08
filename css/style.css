@@ -991,7 +991,7 @@ body {
 }
 .inner-post__align-right {
   overflow: hidden;
-  aspect-ratio: 762/442;
+  aspect-ratio: 1176/784;
   flex: 1 0 46%;
   background-color: #30adcb;
   width: 100%;
@@ -1131,7 +1131,8 @@ body {
 .map--setup {
   position: relative;
   max-width: 100svw;
-  height: clamp(24.438rem,17.739rem + 29.77vw,49rem)
+  height: clamp(24.438rem,17.739rem + 29.77vw,49rem);
+  margin: 0 auto
 }
 .map--setup:not(:last-child) {
   margin-bottom: clamp(3.125rem,2.273rem + 3.79vw,6.25rem)
@@ -2025,7 +2026,6 @@ body {
   outline: 0;
   box-shadow: none
 }
-
 
 .popup--eight-service .popup__content,
 .popup--eighteen-service .popup__content,

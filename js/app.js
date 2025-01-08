@@ -1048,42 +1048,6 @@
             if (menuLink.getAttribute("href") === currentPage) menuLink.classList.add("_active-page");
         }));
     };
-    let center = [ 55.661862, 37.546561 ];
-    function init() {
-        let map = new ymaps.Map("map", {
-            center,
-            zoom: 17
-        });
-        map.options.set("customMapOptions", {
-            fillColor: "rgba(33, 22, 4, 0.80)"
-        });
-        function getMarkerSize() {
-            let width = window.innerWidth;
-            if (width >= 1680) return [ 62, 77 ]; else if (width >= 992) return [ 52, 65 ]; else if (width >= 768) return [ 42, 52 ]; else return [ 37, 46 ];
-        }
-        let placemark = new ymaps.Placemark(center, {}, {
-            iconLayout: "default#image",
-            iconImageHref: "img/items_svg/marker_icon.svg",
-            iconImageSize: getMarkerSize(),
-            iconImageOffset: [ -20, -110 ]
-        });
-        function updateMarkerSize() {
-            let newSize = getMarkerSize();
-            placemark.options.set("iconImageSize", newSize);
-        }
-        window.addEventListener("resize", updateMarkerSize);
-        map.behaviors.disable([ "scrollZoom", "drag", "multiTouch" ]);
-        map.controls.remove("geolocationControl");
-        map.controls.remove("searchControl");
-        map.controls.remove("trafficControl");
-        map.controls.remove("typeSelector");
-        map.controls.remove("fullscreenControl");
-        map.controls.remove("zoomControl");
-        map.controls.remove("rulerControl");
-        map.behaviors.disable([ "scrollZoom" ]);
-        map.geoObjects.add(placemark);
-    }
-    ymaps.ready(init);
     //! Функционал для бургер меню
         document.addEventListener("click", (function(e) {
         const markerLink = e.target.closest(".menu__link--marker");
@@ -1122,6 +1086,71 @@
         animItems.forEach((item => {
             observer.observe(item);
         }));
+    }));
+    //!!------------------------------------
+        let center = [ 55.661862, 37.546561 ];
+    let isMapInitialized = false;
+    let map;
+    function initMap() {
+        if (isMapInitialized) return;
+        isMapInitialized = true;
+        ymaps.ready((function() {
+            map = new ymaps.Map("map", {
+                center,
+                zoom: 17
+            });
+            map.options.set("customMapOptions", {
+                fillColor: "rgba(33, 22, 4, 0.80)"
+            });
+            function getMarkerSize() {
+                let width = window.innerWidth;
+                if (width >= 1680) return [ 62, 77 ]; else if (width >= 992) return [ 52, 65 ]; else if (width >= 768) return [ 42, 52 ]; else return [ 37, 46 ];
+            }
+            let placemark = new ymaps.Placemark(center, {}, {
+                iconLayout: "default#image",
+                iconImageHref: "img/items_svg/marker_icon.svg",
+                iconImageSize: getMarkerSize(),
+                iconImageOffset: [ -20, -110 ]
+            });
+            function updateMapAndMarkerSize() {
+                let newSize = getMarkerSize();
+                placemark.options.set("iconImageSize", newSize);
+                map.container.fitToViewport();
+            }
+            window.addEventListener("resize", updateMapAndMarkerSize);
+            map.behaviors.disable([ "scrollZoom", "drag", "multiTouch" ]);
+            map.controls.remove("geolocationControl");
+            map.controls.remove("searchControl");
+            map.controls.remove("trafficControl");
+            map.controls.remove("typeSelector");
+            map.controls.remove("fullscreenControl");
+            map.controls.remove("zoomControl");
+            map.controls.remove("rulerControl");
+            map.behaviors.disable([ "scrollZoom" ]);
+            map.geoObjects.add(placemark);
+        }));
+    }
+    function loadMapScript() {
+        if (!document.getElementById("yandex-map-script")) {
+            let script = document.createElement("script");
+            script.id = "yandex-map-script";
+            script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU";
+            script.async = true;
+            script.onload = initMap;
+            document.body.appendChild(script);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", (function() {
+        const mapContainer = document.getElementById("map");
+        const observer = new IntersectionObserver((entries => {
+            entries.forEach((entry => {
+                if (entry.isIntersecting) {
+                    loadMapScript();
+                    observer.disconnect();
+                }
+            }));
+        }));
+        observer.observe(mapContainer);
     }));
     window["FLS"] = false;
     menuInit();
