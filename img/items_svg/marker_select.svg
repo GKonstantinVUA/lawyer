@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.2 7.23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        opacity: .46;
+      }
+    </style>
+  </defs>
+  <g id="marker_select">
+    <path id="marker_select-2" data-name="marker_select" class="cls-1" d="M3.78,6.8c.4.58,1.25.58,1.65,0l3.6-5.23c.46-.66-.02-1.57-.82-1.57H1C.2,0-.28.9.18,1.57l3.6,5.23Z"/>
+  </g>
+</svg>

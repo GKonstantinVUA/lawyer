@@ -1,0 +1,250 @@
+/*!Файл media.css*/
+.chart__labels {
+  opacity: 0;
+  -webkit-animation: label-view .5s linear 1 3s forwards;
+  animation: label-view .5s linear 1 3s forwards
+}
+.chart__lines-even {
+  -webkit-animation: active-path 10.5s linear 1 forwards;
+  animation: active-path 10.5s linear 1 forwards;
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800
+}
+.chart__lines-odd {
+  -webkit-animation: active-path 8.5s linear 1 forwards;
+  animation: active-path 8.5s linear 1 forwards;
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800
+}
+.chart__line-horizontal {
+  stroke-dasharray: 914.5 0;
+  -webkit-animation: expand-line 3.25s ease-out forwards;
+  animation: expand-line 3.25s ease-out forwards
+}
+.chart__main-line-trend {
+  -webkit-animation: active-path 4s linear 1 forwards;
+  animation: active-path 4s linear 1 forwards;
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800
+}
+.chart__circle-trend-nine {
+  opacity: 0;
+  -webkit-animation: view-circle .25s linear 1 3s forwards;
+  animation: view-circle .25s linear 1 3s forwards
+}
+.chart__circle-trend-eight {
+  opacity: 0;
+  -webkit-animation: view-circle .25s linear 1 2.62s forwards;
+  animation: view-circle .25s linear 1 2.62s forwards
+}
+.chart__circle-trend-seven {
+  opacity: 0;
+  -webkit-animation: view-circle .25s linear 1 2.35s forwards;
+  animation: view-circle .25s linear 1 2.35s forwards
+}
+.chart__circle-trend-six {
+  opacity: 0;
+  -webkit-animation: view-circle .25s linear 1 2s forwards;
+  animation: view-circle .25s linear 1 2s forwards
+}
+.chart__circle-trend-five {
+  opacity: 0;
+  -webkit-animation: view-circle .25s linear 1 1.57s forwards;
+  animation: view-circle .25s linear 1 1.57s forwards
+}
+.chart__circle-trend-four {
+  opacity: 0;
+  -webkit-animation: view-circle .25s linear 1 1.3s forwards;
+  animation: view-circle .25s linear 1 1.3s forwards
+}
+.chart__circle-trend-three {
+  opacity: 0;
+  -webkit-animation: view-circle .25s linear 1 .86s forwards;
+  animation: view-circle .25s linear 1 .86s forwards
+}
+.chart__circle-trend-two {
+  opacity: 0;
+  -webkit-animation: view-circle .25s linear 1 .2s forwards;
+  animation: view-circle .25s linear 1 .2s forwards
+}
+.chart__circle-trend-one {
+  opacity: 0;
+  -webkit-animation: view-circle .25s linear 1 forwards;
+  animation: view-circle .25s linear 1 forwards
+}
+@-webkit-keyframes view-circle {
+  100% {
+    opacity: 1
+  }
+}
+@keyframes view-circle {
+  100% {
+    opacity: 1
+  }
+}
+@-webkit-keyframes active-path {
+  100% {
+    stroke-dashoffset: 0
+  }
+}
+@keyframes active-path {
+  100% {
+    stroke-dashoffset: 0
+  }
+}
+@-webkit-keyframes expand-line {
+  0% {
+    stroke-dasharray: 0 914.5
+  }
+  100% {
+    stroke-dasharray: 457.25 0
+  }
+}
+@keyframes expand-line {
+  0% {
+    stroke-dasharray: 0 914.5
+  }
+  100% {
+    stroke-dasharray: 457.25 0
+  }
+}
+@-webkit-keyframes label-view {
+  100% {
+    opacity: 1
+  }
+}
+@keyframes label-view {
+  100% {
+    opacity: 1
+  }
+}
+.line-stages__circle-four {
+  opacity: 0;
+  -webkit-animation: view-circle .25s linear 1 1.46s forwards;
+  animation: view-circle .25s linear 1 1.46s forwards
+}
+.line-stages__circle-three {
+  opacity: 0;
+  -webkit-animation: view-circle .25s linear 1 1.46s forwards;
+  animation: view-circle .25s linear 1 1.46s forwards
+}
+.line-stages__circle-two {
+  opacity: 0;
+  -webkit-animation: view-circle .25s linear 1 .63s forwards;
+  animation: view-circle .25s linear 1 .63s forwards
+}
+.line-stages__circle-one {
+  opacity: 0;
+  -webkit-animation: view-circle .25s linear 1 .22s forwards;
+  animation: view-circle .25s linear 1 .22s forwards
+}
+.line-stages__line-vertical {
+  -webkit-animation: none;
+  animation: none;
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800
+}
+@-webkit-keyframes down-path {
+  100% {
+    stroke-dashoffset: 0
+  }
+}
+@keyframes down-path {
+  100% {
+    stroke-dashoffset: 0
+  }
+}
+.stages__promo-wrap.animate .wrap-promo__element-box--jump-one {
+  -webkit-animation: view-card .25s linear 1 .22s forwards;
+  animation: view-card .25s linear 1 .22s forwards
+}
+.stages__promo-wrap.animate .wrap-promo__element-box--jump-two {
+  -webkit-animation: view-circle .25s linear 1 .63s forwards;
+  animation: view-circle .25s linear 1 .63s forwards
+}
+.stages__promo-wrap.animate .wrap-promo__element-box--jump-three {
+  -webkit-animation: view-circle .25s linear 1 1s forwards;
+  animation: view-circle .25s linear 1 1s forwards
+}
+.stages__promo-wrap.animate .wrap-promo__element-box--jump-four {
+  -webkit-animation: view-circle .25s linear 1 1.46s forwards;
+  animation: view-circle .25s linear 1 1.46s forwards
+}
+.stages__promo-wrap.animate .line-stages__line-vertical {
+  -webkit-animation: down-path 4s linear 1 forwards;
+  animation: down-path 4s linear 1 forwards
+}
+.wrap-promo__element-box--jump-one {
+  opacity: 0;
+  -webkit-animation: none;
+  animation: none
+}
+.wrap-promo__element-box--jump-two {
+  opacity: 0;
+  -webkit-animation: none;
+  animation: none
+}
+.wrap-promo__element-box--jump-three {
+  opacity: 0;
+  -webkit-animation: none;
+  animation: none
+}
+.wrap-promo__element-box--jump-four {
+  opacity: 0;
+  -webkit-animation: none;
+  animation: none
+}
+@-webkit-keyframes view-card {
+  100% {
+    opacity: 1
+  }
+}
+@keyframes view-card {
+  100% {
+    opacity: 1
+  }
+}
+.risk__desk-risk blockquote::before {
+  width: 100%;
+  height: 0;
+  -webkit-animation: blockquote-height 3s linear 1 forwards;
+  animation: blockquote-height 3s linear 1 forwards
+}
+@-webkit-keyframes blockquote-height {
+  from {
+    height: 0%
+  }
+  to {
+    height: 100%
+  }
+}
+@keyframes blockquote-height {
+  from {
+    height: 0%
+  }
+  to {
+    height: 100%
+  }
+}
+.accent__content-box.animate .envelope__property-cell strong::after {
+  -webkit-animation: blockquote-width 3s linear 1 forwards;
+  animation: blockquote-width 3s linear 1 forwards
+}
+@-webkit-keyframes blockquote-width {
+  from {
+    width: 0%
+  }
+  to {
+    width: 100%
+  }
+}
+@keyframes blockquote-width {
+  from {
+    width: 0%
+  }
+  to {
+    width: 100%
+  }
+}
+
+/*!Файл media.css*/
